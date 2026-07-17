@@ -115,6 +115,89 @@ export default function CuantoCuesta() {
             <span>Las cancelaciones con menos de 24 horas de aviso no tienen reposición.</span>
           </li>
         </ul>
+
+        <details className="group mt-6">
+          <summary className="cursor-pointer list-none text-sm font-semibold text-ink underline decoration-teal decoration-2 underline-offset-4">
+            Ver reglamento completo
+          </summary>
+
+          <div className="mt-5 space-y-6">
+            <div>
+              <p className="font-semibold text-ink">¿Cómo y cuándo se paga?</p>
+              <p className="mt-2">
+                Las clases se pagan solo a través de transferencia bancaria.
+                Se pagan el primer día de clases de cada ciclo, antes de que
+                comience la primera clase.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-ink">
+                ¿A quién están dirigidas las clases?
+              </p>
+              <p className="mt-2">
+                Las clases están dirigidas a niños, niñas, jóvenes y adultos.
+                No importa la edad que tengas, nunca es tarde para aprender o
+                retomar la batería.
+              </p>
+              <p className="mt-2">
+                Las clases son particulares: durante la clase solo estarán
+                presentes el profesor y el estudiante, salvo que el
+                estudiante sea menor de 14 años y éste o su apoderado se
+                pongan de acuerdo con el profesor para que sea acompañado por
+                un adulto durante la clase.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-ink">¿Cuándo son las clases?</p>
+              <p className="mt-2">
+                El día y la hora de clases se coordinan con el profesor
+                según disponibilidad.
+              </p>
+            </div>
+
+            <div>
+              <p className="font-semibold text-ink">Sobre la asistencia</p>
+              <ul className="mt-2 space-y-2">
+                <li className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  <span>
+                    Si avisas con 24 horas de anticipación que no puedes
+                    asistir, la clase se recupera otro día del mes en que
+                    tengas clases, y ese día se hace una clase de 1 hora y 30
+                    minutos.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  <span>
+                    Si no avisas con 24 horas de anticipación, la clase se
+                    pierde y no se recupera.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  <span>
+                    Si el profesor suspende la clase, el estudiante y el
+                    profesor acuerdan un nuevo día y hora para recuperarla.
+                  </span>
+                </li>
+                <li className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  <span>Solo se pueden suspender 2 de las 4 clases al mes.</span>
+                </li>
+                <li className="flex gap-2">
+                  <span aria-hidden="true" className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
+                  <span>
+                    Si no puedes asistir a una clase recuperativa, esa clase
+                    se pierde.
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </details>
       </div>
     </section>
   );
