@@ -31,6 +31,27 @@ const temas = [
   },
 ];
 
+const temario = [
+  "Instrumentos de la batería",
+  "Configuración de la batería",
+  "Uso de hardware",
+  "Agarre de las baquetas",
+  "Lectura rítmica aplicada a la batería",
+  "Rudimentos",
+  "Drum Grooves",
+  "Drum Fills",
+  "Uso del metrónomo",
+  "Interdependencia (Coordinación)",
+  "Estilos",
+  "Repertorio",
+  "Técnicas de pedal de bombo",
+  "Técnicas de pedal de hi-hat",
+  "Transcripción y uso de softwares",
+  "Preparación para certificaciones internacionales",
+];
+
+const necesitas = ["Baquetas", "Libros solicitados por el profesor", "Cuaderno y lápiz"];
+
 export default function QueVasAAprender() {
   return (
     <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
@@ -42,7 +63,13 @@ export default function QueVasAAprender() {
       </h1>
       <p className="mt-4 max-w-2xl text-base text-warm-gray">
         Un plan personalizado que combina fundamentos técnicos con canciones
-        reales, para que sientas avances desde la primera clase.
+        reales, para que sientas avances desde la primera clase. No necesitas
+        experiencia previa — podemos partir desde cero, o profundizar en lo
+        que ya sabes.
+      </p>
+
+      <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-paper-soft px-3 py-1.5 text-xs font-semibold text-ink">
+        🇬🇧 Clases disponibles en inglés / Lessons available in English
       </p>
 
       <ul className="mt-10 grid gap-6 sm:grid-cols-2">
@@ -54,9 +81,41 @@ export default function QueVasAAprender() {
         ))}
       </ul>
 
+      <details className="group mt-8 border-t border-ink/10 pt-6">
+        <summary className="cursor-pointer list-none text-sm font-semibold text-ink underline decoration-teal decoration-2 underline-offset-4">
+          Ver temario completo
+        </summary>
+        <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-2 text-sm text-ink/80 sm:grid-cols-2">
+          {temario.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+
       {/* Instrumento y equipo */}
       <div className="mt-16 border-t border-ink/10 pt-12">
         <h2 className="font-display text-2xl tracking-wide">
+          ¿QUÉ NECESITAS PARA LAS CLASES?
+        </h2>
+        <ul className="mt-5 space-y-2 text-sm text-ink/80">
+          {necesitas.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-12 font-display text-2xl tracking-wide">
           EL EQUIPO QUE USAMOS
         </h2>
         <div className="mt-6 grid gap-8 sm:grid-cols-2">
