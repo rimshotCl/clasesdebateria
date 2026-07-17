@@ -26,22 +26,22 @@ export default function QuienHaceLasClases() {
 
         <div className="space-y-5 text-base leading-relaxed text-ink/90">
           <p>
-            Más de 10 años dedicado al estudio de la batería, con formación
-            junto a Rodrigo Recabarren, baterista chileno radicado en Nueva
-            York y con estudios en NYU, además de literatura técnica
-            especializada y su paso por el Taller de Canciones Raras. Un
+            Llevo más de 10 años dedicado al estudio de la batería, con
+            formación junto a Rodrigo Recabarren, baterista chileno radicado
+            en Nueva York y con estudios en NYU, además de literatura técnica
+            especializada y mi paso por el Taller de Canciones Raras. Un
             recorrido enfocado en entender a fondo el instrumento: técnica,
             lectura musical y estilos.
           </p>
           <p>
-            Cree en una enseñanza personalizada: cada alumno avanza según su
+            Creo en una enseñanza personalizada: cada alumno avanza según su
             propio ritmo, combinando técnica, lectura musical y repertorio real
             desde las primeras clases, en lugar de ejercicios abstractos y
             genéricos.
           </p>
           <p>
-            Las clases se dictan de forma presencial en la comuna de Las
-            Condes, ya sea en tu casa o coordinando un lugar de encuentro.
+            Dicto mis clases de forma presencial en la comuna de Las Condes, ya
+            sea en mi casa o en la casa del estudiante.
           </p>
         </div>
       </div>
