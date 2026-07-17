@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import RhythmBar from "@/components/RhythmBar";
+import Metronome from "@/components/Metronome";
 import { waLink, defaultWaMessage } from "@/lib/site";
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <section className="mx-auto max-w-5xl px-5 pb-12 pt-10 sm:pt-16">
         <div className="grid gap-8 sm:grid-cols-2 sm:items-center sm:gap-10">
           <div>
-            <RhythmBar className="mb-6" />
+            <Metronome className="mb-6 h-28 w-auto" />
             <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-ink sm:text-5xl">
               CLASES DE BATERÍA
               <span className="relative mt-1 block w-fit">

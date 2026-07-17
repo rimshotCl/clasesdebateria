@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RhythmBar from "@/components/RhythmBar";
+import Metronome from "@/components/Metronome";
 import { waLink, defaultWaMessage, instagramUrl } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function Contacto() {
   return (
     <section className="mx-auto max-w-3xl px-5 py-12 text-center sm:py-20">
-      <RhythmBar className="mx-auto mb-6 justify-center" />
+      <Metronome className="mx-auto mb-6 h-28 w-auto" />
       <h1 className="font-display text-3xl tracking-wide sm:text-4xl">
         HABLEMOS
       </h1>
