@@ -126,10 +126,43 @@ export default function QueVasAAprender() {
               ratio="aspect-[4/3]"
             />
             <p className="mt-3 text-sm text-ink/80">
-              En las clases usamos una <strong>Pearl Rhythm Traveler</strong>,
+              En las clases usamos una <strong>Pearl Rhythm Traveler</strong>{" "}
+              de 5 piezas, con parches de malla y platillos de práctica,
               compacta y silenciosa, ideal para practicar sin molestar a los
               vecinos.
             </p>
+
+            <details className="group mt-3">
+              <summary className="cursor-pointer list-none text-sm font-semibold text-ink underline decoration-teal decoration-2 underline-offset-4">
+                Ver especificaciones completas
+              </summary>
+              <div className="mt-4 space-y-4 text-sm text-ink/80">
+                <div>
+                  <p className="font-semibold text-ink">
+                    Medidas de la batería y parches
+                  </p>
+                  <ul className="mt-2 space-y-1">
+                    <li>Bombo: 20” x 8” — con parche Remo Silentstroke</li>
+                    <li>Caja: 13” x 5” — con parche Remo Silentstroke</li>
+                    <li>Tom 1: 10” x 5” — con parche Evans Soundoff</li>
+                    <li>Tom 2: 12” x 5” — con parche Pearl Muffle Head</li>
+                    <li>Tom 3: 14” x 5” — con parche Pearl Muffle Head</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-ink">Platillos</p>
+                  <ul className="mt-2 space-y-1">
+                    <li>Hi-hat: Zildjian Low Volume 13”</li>
+                    <li>Crash: Arborea Mute 18”</li>
+                    <li>Ride: Arborea Mute 18”</li>
+                  </ul>
+                </div>
+                <div>
+                  <p className="font-semibold text-ink">Pedal de bombo</p>
+                  <p className="mt-2">Tama Iron Cobra 600</p>
+                </div>
+              </div>
+            </details>
           </div>
           <div>
             <ImagePlaceholder
