@@ -1,120 +1,173 @@
-import Link from "next/link";
+import type { Metadata } from "next";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
-import RhythmBar from "@/components/RhythmBar";
-import { waLink, defaultWaMessage } from "@/lib/site";
+import { waLink, defaultWaMessage, rimshotUrl } from "@/lib/site";
 
-export default function Home() {
+export const metadata: Metadata = {
+  title: "Qué vas a aprender | Clases de Batería",
+  description:
+    "Técnica, lectura musical, coordinación y estilos en las clases particulares de batería.",
+};
+
+const temas = [
+  {
+    title: "Lectura musical",
+    body: "Aprende a leer partituras de batería: figuras rítmicas, compases y notación estándar.",
+  },
+  {
+    title: "Técnica de baquetas",
+    body: "Postura, agarre, rebote y control, para tocar con precisión y sin lesionarte.",
+  },
+  {
+    title: "Coordinación",
+    body: "Ejercicios progresivos para independizar manos y pies en distintos patrones.",
+  },
+  {
+    title: "Estilos musicales",
+    body: "Rock, pop, funk, latin y más, según tus gustos e intereses.",
+  },
+  {
+    title: "Repertorio real",
+    body: "Aplicas lo aprendido tocando canciones completas, no solo ejercicios sueltos.",
+  },
+];
+
+const temario = [
+  "Instrumentos de la batería",
+  "Configuración de la batería",
+  "Uso de hardware",
+  "Agarre de las baquetas",
+  "Lectura rítmica aplicada a la batería",
+  "Rudimentos",
+  "Drum Grooves",
+  "Drum Fills",
+  "Uso del metrónomo",
+  "Interdependencia (Coordinación)",
+  "Estilos",
+  "Repertorio",
+  "Técnicas de pedal de bombo",
+  "Técnicas de pedal de hi-hat",
+  "Transcripción y uso de softwares",
+  "Preparación para certificaciones internacionales",
+];
+
+const necesitas = ["Baquetas", "Libros solicitados por el profesor", "Cuaderno y lápiz"];
+
+export default function QueVasAAprender() {
   return (
-    <>
-      {/* Hero */}
-      <section className="mx-auto max-w-5xl px-5 pb-12 pt-10 sm:pt-16">
-        <div className="grid gap-8 sm:grid-cols-2 sm:items-center sm:gap-10">
-          <div>
-            <RhythmBar className="mb-6" />
-            <h1 className="font-display text-4xl leading-[0.95] tracking-wide text-ink sm:text-5xl">
-              CLASES DE BATERÍA
-              <span className="relative mt-1 block w-fit">
-                <span className="absolute inset-x-0 bottom-1 h-3 bg-teal sm:h-4" aria-hidden="true" />
-                <span className="relative">A TU RITMO</span>
-              </span>
-            </h1>
-            <p className="mt-5 max-w-md text-base text-warm-gray sm:text-lg">
-              Clases particulares presenciales en Las Condes. Aprende técnica,
-              lectura musical y a tocar tus canciones favoritas, de forma
-              personalizada.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href={waLink(defaultWaMessage)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm bg-teal px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
-              >
-                Escríbeme por WhatsApp
-              </a>
-              <Link
-                href="/que-vas-a-aprender"
-                className="rounded-sm border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink/40"
-              >
-                Qué vas a aprender
-              </Link>
-            </div>
-          </div>
+    <section className="mx-auto max-w-5xl px-5 py-12 sm:py-16">
+      <p className="font-data text-xs uppercase tracking-widest text-ink">
+        El método
+      </p>
+      <h1 className="mt-2 font-display text-3xl tracking-wide sm:text-4xl">
+        QUÉ VAS A APRENDER
+      </h1>
+      <p className="mt-4 max-w-2xl text-base text-warm-gray">
+        Un plan personalizado que combina fundamentos técnicos con canciones
+        reales, para que sientas avances desde la primera clase. No necesitas
+        experiencia previa — podemos partir desde cero, o profundizar en lo
+        que ya sabes.
+      </p>
 
-          <ImagePlaceholder
-            src="/images/hero-bateria.webp"
-            alt="Profesor tocando batería durante una clase presencial"
-            ratio="aspect-[4/3]"
-          />
-        </div>
-      </section>
+      <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-paper-soft px-3 py-1.5 text-xs font-semibold text-ink">
+        🇬🇧 Clases disponibles en inglés / Lessons available in English
+      </p>
 
-      {/* Resumen en 3 columnas */}
-      <section className="border-y border-ink/10 bg-paper-soft/60">
-        <div className="mx-auto grid max-w-5xl gap-8 px-5 py-14 sm:grid-cols-3">
-          <SummaryCard
-            eyebrow="El profesor"
-            title="Joaquín Winther"
-            body="Más de 10 años tocando batería, formación con Rodrigo Recabarren y estudio autodidacta con material como Great Hands for a Lifetime y Groove Essentials de Tommy Igoe."
-            href="/quien-hace-las-clases"
-          />
-          <SummaryCard
-            eyebrow="El método"
-            title="Técnica + repertorio"
-            body="Lectura musical, coordinación y estilos, aplicados directamente a canciones que quieras tocar."
-            href="/que-vas-a-aprender"
-          />
-          <SummaryCard
-            eyebrow="La inversión"
-            title="Clases flexibles"
-            body="Clase única o ciclos de 4 clases, presenciales en tu casa o en mi casa."
-            href="/cuanto-cuesta"
-          />
-        </div>
-      </section>
+      <ul className="mt-10 grid gap-6 sm:grid-cols-2">
+        {temas.map((tema) => (
+          <li key={tema.title} className="border-l-2 border-teal pl-4">
+            <h2 className="font-display text-lg tracking-wide">{tema.title}</h2>
+            <p className="mt-1 text-sm text-ink/80">{tema.body}</p>
+          </li>
+        ))}
+      </ul>
 
-      {/* CTA final */}
-      <section className="mx-auto max-w-5xl px-5 py-16 text-center">
-        <h2 className="font-display text-2xl tracking-wide sm:text-3xl">
-          ¿LISTO PARA EMPEZAR A TOCAR?
+      <details className="group mt-8 border-t border-ink/10 pt-6">
+        <summary className="cursor-pointer list-none text-sm font-semibold text-ink underline decoration-teal decoration-2 underline-offset-4">
+          Ver temario completo
+        </summary>
+        <ul className="mt-5 grid grid-cols-1 gap-x-8 gap-y-2 text-sm text-ink/80 sm:grid-cols-2">
+          {temario.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </details>
+
+      {/* Instrumento y equipo */}
+      <div className="mt-16 border-t border-ink/10 pt-12">
+        <h2 className="font-display text-2xl tracking-wide">
+          ¿QUÉ NECESITAS PARA LAS CLASES?
         </h2>
-        <p className="mx-auto mt-3 max-w-md text-warm-gray">
-          Cuéntame tu nivel y disponibilidad y coordinamos tu primera clase.
+        <ul className="mt-5 space-y-2 text-sm text-ink/80">
+          {necesitas.map((item) => (
+            <li key={item} className="flex gap-2">
+              <span
+                aria-hidden="true"
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal"
+              />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+
+        <h2 className="mt-12 font-display text-2xl tracking-wide">
+          EL EQUIPO QUE USAMOS
+        </h2>
+        <div className="mt-6 grid gap-8 sm:grid-cols-2">
+          <div>
+            <ImagePlaceholder
+              src="/images/bateria-pearl-rhythm-traveler.webp"
+              alt="Batería Pearl Rhythm Traveler usada en las clases"
+              ratio="aspect-[4/3]"
+            />
+            <p className="mt-3 text-sm text-ink/80">
+              En las clases usamos una <strong>Pearl Rhythm Traveler</strong>,
+              compacta y silenciosa, ideal para practicar sin molestar a los
+              vecinos.
+            </p>
+          </div>
+          <div>
+            <ImagePlaceholder
+              src="/images/alesis-nitro-max.webp"
+              alt="Batería electrónica Alesis Nitro Max recomendada para practicar en casa"
+              ratio="aspect-[4/3]"
+            />
+            <p className="mt-3 text-sm text-ink/80">
+              Para practicar en casa, recomendamos la{" "}
+              <strong>Alesis Nitro Max</strong>.
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-6 text-sm text-ink/80">
+          Además de la batería, también vas a necesitar tus propias baquetas.
+          Puedes encontrarlas (y otros accesorios) en mi tienda{" "}
+          <a
+            href={rimshotUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink underline decoration-teal decoration-2 underline-offset-4"
+          >
+            RIMSHOT →
+          </a>
         </p>
+      </div>
+
+      <div className="mt-14">
         <a
           href={waLink(defaultWaMessage)}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-6 inline-block rounded-sm bg-teal px-7 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
+          className="inline-block rounded-sm bg-teal px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
         >
           Escríbeme por WhatsApp
         </a>
-      </section>
-    </>
-  );
-}
-
-function SummaryCard({
-  eyebrow,
-  title,
-  body,
-  href,
-}: {
-  eyebrow: string;
-  title: string;
-  body: string;
-  href: string;
-}) {
-  return (
-    <Link href={href} className="group block">
-      <p className="font-data text-xs uppercase tracking-widest text-ink">
-        {eyebrow}
-      </p>
-      <h3 className="mt-2 font-display text-xl tracking-wide">{title}</h3>
-      <p className="mt-2 text-sm text-warm-gray">{body}</p>
-      <span className="mt-3 inline-block text-sm font-semibold text-ink underline decoration-teal decoration-2 underline-offset-4">
-        Ver más →
-      </span>
-    </Link>
+      </div>
+    </section>
   );
 }
