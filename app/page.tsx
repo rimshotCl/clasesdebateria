@@ -1,6 +1,7 @@
 import Link from "next/link";
 import ImagePlaceholder from "@/components/ImagePlaceholder";
 import Metronome from "@/components/Metronome";
+import Faq from "@/components/Faq";
 import { waLink, defaultWaMessage } from "@/lib/site";
 
 export default function Home() {
@@ -24,12 +25,12 @@ export default function Home() {
               personalizada.
             </p>
             <div className="mt-7 flex flex-wrap gap-3">
-              <a
-                href={waLink(defaultWaMessage)}
+              
+               <a href={waLink(defaultWaMessage)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-sm bg-teal px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
-              >
+                  className="rounded-sm bg-teal px-6 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
+                >
                 Escríbeme por WhatsApp
               </a>
               <Link
@@ -73,30 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Preguntas frecuentes */}
-      <section className="mx-auto max-w-3xl px-5 py-16">
-        <h2 className="font-display text-2xl tracking-wide sm:text-3xl">
-          PREGUNTAS FRECUENTES
-        </h2>
-        <div className="mt-8 divide-y divide-ink/10 border-y border-ink/10">
-          {faqs.map((faq) => (
-            <details key={faq.pregunta} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-sm font-semibold text-ink sm:text-base">
-                {faq.pregunta}
-                <span
-                  aria-hidden="true"
-                  className="shrink-0 text-teal transition-transform group-open:rotate-45"
-                >
-                  +
-                </span>
-              </summary>
-              <p className="mt-3 text-sm leading-relaxed text-ink/80">
-                {faq.respuesta}
-              </p>
-            </details>
-          ))}
-        </div>
-      </section>
+      <Faq className="py-16" />
 
       {/* CTA final */}
       <section className="mx-auto max-w-5xl px-5 py-16 text-center">
@@ -106,8 +84,8 @@ export default function Home() {
         <p className="mx-auto mt-3 max-w-md text-warm-gray">
           Cuéntame tu nivel y disponibilidad y coordinamos tu primera clase.
         </p>
-        <a
-          href={waLink(defaultWaMessage)}
+        
+          <a href={waLink(defaultWaMessage)}
           target="_blank"
           rel="noopener noreferrer"
           className="mt-6 inline-block rounded-sm bg-teal px-7 py-3 text-sm font-semibold text-ink transition-colors hover:bg-teal-dark"
@@ -118,39 +96,6 @@ export default function Home() {
     </>
   );
 }
-
-const faqs = [
-  {
-    pregunta: "¿Necesito experiencia previa para tomar clases?",
-    respuesta:
-      "No, podemos partir desde cero, o profundizar en lo que ya sabes tocar.",
-  },
-  {
-    pregunta: "¿Dónde son las clases?",
-    respuesta:
-      "Presenciales en Las Condes, en mi casa o en la casa del estudiante, según el plan que elijas.",
-  },
-  {
-    pregunta: "¿Qué necesito llevar a las clases?",
-    respuesta:
-      "Baquetas, cuaderno y lápiz, y los libros que te vaya solicitando durante el proceso.",
-  },
-  {
-    pregunta: "¿Qué pasa si no puedo ir a una clase?",
-    respuesta:
-      "Si avisas con al menos 24 horas de anticipación, la recuperamos otro día del mes. Puedes ver el detalle completo en la sección de precios.",
-  },
-  {
-    pregunta: "¿Haces clases en inglés?",
-    respuesta:
-      "Sí. If your first language is English, I can teach the lessons in English.",
-  },
-  {
-    pregunta: "¿Cómo se paga?",
-    respuesta:
-      "Por transferencia bancaria, el primer día de clases de cada ciclo.",
-  },
-];
 
 function SummaryCard({
   eyebrow,
